@@ -17,12 +17,16 @@ public class Main {
 		consola.escribirLinea("Ronda " + partida.getRonda());
 		consola.escribirLinea(partida.getJugador1().toString());
 		consola.escribirLinea(partida.getJugador2().toString());
-		do {
-			if (pedir1 == true) {
+		while (!partida.finPartida(pedir1, pedir2)) {
+			if (pedir1 == true && partida.getJugador1().puntuacion() != 21) {
 				pedir1 = consola.readBooleanUsingChar('p', 'f', "Jugador 1 escribe p para pedir o f para plantarte");
+			} else {
+				pedir1 = false;
 			}
-			if (pedir2 == true) {
+			if (pedir2 == true && partida.getJugador2().puntuacion() != 21) {
 				pedir2 = consola.readBooleanUsingChar('p', 'f', "Jugador 2 escribe p para pedir o f para plantarte");
+			} else {
+				pedir2 = false;
 			}
 
 			partida.pedirCarta(pedir1, pedir2);
@@ -30,14 +34,18 @@ public class Main {
 			consola.escribirLinea(partida.getJugador1().toString());
 			consola.escribirLinea(partida.getJugador2().toString());
 
-		} while (!partida.finPartida(pedir1, pedir2));
+		}
 
-		if (partida.getJugador1().puntuacion() > partida.getJugador2().puntuacion()
-				&& partida.getJugador1().puntuacion() <= 21) {
-			consola.escribirLinea(nombre1 + "gana!!");
-		} else if (partida.getJugador2().puntuacion() > partida.getJugador1().puntuacion()
-				&& partida.getJugador2().puntuacion() <= 21) {
-			consola.escribirLinea(nombre1 + "gana!!");
+		if ((partida.getJugador1().puntuacion() > partida.getJugador2().puntuacion()
+				&& partida.getJugador1().puntuacion() <= 21)
+				|| (partida.getJugador1().puntuacion() <= 21 && partida.getJugador2().puntuacion() > 21)) {
+			consola.escribirLinea(nombre1 + " gana!!");
+		} else if ((partida.getJugador2().puntuacion() > partida.getJugador1().puntuacion()
+				&& partida.getJugador2().puntuacion() <= 21)
+				|| (partida.getJugador2().puntuacion() <= 21 && partida.getJugador1().puntuacion() > 21)) {
+			consola.escribirLinea(nombre2 + " gana!!");
+		} else {
+			consola.escribirLinea("Empate!!");
 		}
 	}
 
