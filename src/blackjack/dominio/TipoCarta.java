@@ -12,4 +12,14 @@ public enum TipoCarta {
 	public int getValor() {
 		return valor;
 	}
+
+	@Override
+	public String toString() {
+		if (valor != 11) {
+			return String.format("%d", valor);
+		} else {
+			return "AS";
+		}
+
+	}
 }

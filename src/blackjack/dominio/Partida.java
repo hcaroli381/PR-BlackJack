@@ -79,4 +79,11 @@ public class Partida {
 	public void setRonda(int ronda) {
 		this.ronda = ronda;
 	}
+
+	@Override
+	public String toString() {
+		return String.format("Ronda %d\n%s : %s %d puntos\n%s : %s %d puntos", ronda, jugador1.getNombre(),
+				jugador1.getMano().toString(), jugador1.puntuacion(), jugador2.getNombre(),
+				jugador2.getMano().toString(), jugador2.puntuacion());
+	}
 }

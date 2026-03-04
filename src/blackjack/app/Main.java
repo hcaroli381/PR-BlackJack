@@ -14,9 +14,7 @@ public class Main {
 		nombre2 = consola.leerTextoNoVacio("Introduce el nombre del segundo jugador");
 		partida = new Partida(nombre1, nombre2);
 		partida.iniciarPartida();
-		consola.escribirLinea("Ronda " + partida.getRonda());
-		consola.escribirLinea(partida.getJugador1().toString());
-		consola.escribirLinea(partida.getJugador2().toString());
+		consola.escribirLinea(partida.toString());
 		while (!partida.finPartida(pedir1, pedir2)) {
 			if (pedir1 == true && partida.getJugador1().puntuacion() != 21) {
 				pedir1 = consola.readBooleanUsingChar('p', 'f', "Jugador 1 escribe p para pedir o f para plantarte");
@@ -30,9 +28,7 @@ public class Main {
 			}
 
 			partida.pedirCarta(pedir1, pedir2);
-			consola.escribirLinea("Ronda " + partida.getRonda());
-			consola.escribirLinea(partida.getJugador1().toString());
-			consola.escribirLinea(partida.getJugador2().toString());
+			consola.escribirLinea(partida.toString());
 
 		}
 

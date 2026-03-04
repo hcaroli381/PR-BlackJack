@@ -26,6 +26,6 @@ public class Carta {
 	}
 
 	public String toString() {
-		return String.format("%s de %s", tipo.toString(), palo.toString());
+		return String.format("%s%s", tipo.toString(), palo.toString());
 	}
 }
