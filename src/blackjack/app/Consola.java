@@ -1,4 +1,4 @@
-package blackjack.dominio;
+package blackjack.app;
 
 import java.util.Scanner;
 
@@ -117,5 +117,46 @@ public class Consola {
 			}
 		} while (valor < min || valor > max);
 		return valor;
+	}
+
+	public char readChar() {
+		String s;
+		boolean hayError = true;
+		char c = ' ';
+
+		do {
+			try {
+				s = sc.next();
+
+				if (s.length() != 1) {
+					System.err.println("Error: Debes introducir exactamente un carácter.");
+					sc.nextLine();
+				} else {
+					c = s.charAt(0);
+					hayError = false;
+				}
+
+			} catch (Exception e) {
+				System.err.println("Error: Ocurrió un problema al leer la entrada.");
+				sc.nextLine();
+				hayError = true;
+			}
+		} while (hayError);
+
+		return c;
+	}
+
+	public boolean readBooleanUsingChar(char affirmativeValue, char negativeValue, String mensaje) {
+		char c;
+		System.out.printf("%s", mensaje, affirmativeValue, negativeValue);
+
+		do {
+			c = readChar();
+			if (c != affirmativeValue && c != negativeValue) {
+				System.err.printf("Opción no válida. Introduce %c o %c: ", affirmativeValue, negativeValue);
+			}
+
+		} while (c != affirmativeValue && c != negativeValue);
+		return (c == affirmativeValue);
 	}
 }

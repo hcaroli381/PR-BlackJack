@@ -49,4 +49,9 @@ public class Jugador {
 		mano.add(carta);
 	}
 
+	@Override
+	public String toString() {
+		return String.format("%s : %s %d puntos", this.nombre, this.mano.toString(), this.puntuacion());
+	}
+
 }
