@@ -1,5 +1,6 @@
 package blackjack.dominio;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Jugador {
@@ -8,6 +9,7 @@ public class Jugador {
 
 	public Jugador(String nombre) {
 		this.nombre = nombre;
+		this.mano = new ArrayList<>();
 
 	}
 
