@@ -5,7 +5,11 @@ public class Partida {
 	private Jugador jugador1;
 	private Jugador jugador2;
 	private int ronda;
-
+	/**
+	 * Constructor que crea la baraja, la mezcla y crea a ambos jugadores
+	 * @param nombre1 nombre del primer jugador
+	 * @param nombre2 nombre del segundo jugador
+	 */
 	public Partida(String nombre1, String nombre2) {
 		baraja = new Baraja();
 		baraja.crearBaraja();
@@ -15,6 +19,9 @@ public class Partida {
 		jugador2 = new Jugador(nombre2);
 	}
 
+	/**
+	 * Reparte las dos primeras cartas a los dos jugadores
+	 */
 	public void iniciarPartida() {
 		repartirCarta(jugador1);
 		repartirCarta(jugador2);
@@ -22,12 +29,21 @@ public class Partida {
 		repartirCarta(jugador2);
 	}
 
+	/**
+	 * crea una carta para darla a un jugador y eliminarla después
+	 * @param jugador que recibirá la carta
+	 */
 	private void repartirCarta(Jugador jugador) {
 		Carta carta = baraja.extraerCarta();
 		jugador.recibirCarta(carta);
 		baraja.eliminarCarta();
 	}
 
+	/**
+	 * Reparte carta si el jugador la pide
+	 * @param bJug1 comprueba que el jugador 1 quiera carta
+	 * @param bJug2 comprueba que el jugador 2 quiera carta
+	 */
 	public void pedirCarta(boolean bJug1, boolean bJug2) {
 		if (bJug1) {
 			repartirCarta(jugador1);
@@ -38,6 +54,12 @@ public class Partida {
 		ronda = ronda + 1;
 	}
 
+	/**
+	 * Dictamina si la partida ha terminado o sigue
+	 * @param bJug1 comprueba que el jugador 1 siga jugando
+	 * @param bJug2 comprueba que el jugador 2 siga jugando
+	 * @return true si la partida finaliza, false si se sigue jugando
+	 */
 	public boolean finPartida(boolean bJug1, boolean bJug2) {
 		if (!bJug1 && !bJug2) {
 			return true;

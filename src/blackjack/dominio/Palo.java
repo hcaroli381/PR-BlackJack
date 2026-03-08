@@ -1,5 +1,7 @@
 package blackjack.dominio;
-
+/**
+ * Distintos palos posibles de una carta
+ */
 public enum Palo {
 	DIAMANTES('♦'), PICAS('♠'), TREBOLES('♣'), CORAZONES('♥');
 

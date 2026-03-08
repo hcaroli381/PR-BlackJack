@@ -2,7 +2,9 @@ package blackjack.dominio;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * Usuarios del programa
+ */
 public class Jugador {
 	private String nombre;
 	private List<Carta> mano;
@@ -28,7 +30,10 @@ public class Jugador {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
+	/**
+	 * utilizado para saber quien va ganando o gana al final, restando 10 si tenemos un as y nos pasamos
+	 * @return puntuacion de ese momento
+	 */
 	public int puntuacion() {
 		int puntuacion = 0;
 		int ases = 0;
@@ -44,7 +49,11 @@ public class Jugador {
 		}
 		return puntuacion;
 	}
-
+	
+	/**
+	 * Recibir una carta como jugador
+	 * @param carta a recibir
+	 */
 	public void recibirCarta(Carta carta) {
 		mano.add(carta);
 	}
