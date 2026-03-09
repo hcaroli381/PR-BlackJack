@@ -1,4 +1,5 @@
 package blackjack.dominio;
+
 /**
  * Número de la carta o figura junto a su valor
  */
@@ -17,10 +18,16 @@ public enum TipoCarta {
 
 	@Override
 	public String toString() {
-		if (valor != 11) {
-			return String.format("%d", valor);
-		} else {
+		if (this.name().equals(TipoCarta.AS.name())) {
 			return "AS";
+		} else if (this.name().equals(TipoCarta.JOTA.name())) {
+			return "J";
+		} else if (this.name().equals(TipoCarta.REINA.name())) {
+			return "Q";
+		} else if (this.name().equals(TipoCarta.REY.name())) {
+			return "K";
+		} else {
+			return String.format("%d", valor);
 		}
 
 	}
