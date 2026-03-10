@@ -26,8 +26,8 @@ public class Crupier extends Jugador {
 
 	@Override
 	public String toString() {
-		if (turno = false) {
-			return String.format("[%s , *]", getMano().getFirst().toString());
+		if (turno == false) {
+			return String.format("Crupier : [%s , *]", getMano().getFirst().toString());
 		} else {
 			return super.toString();
 		}

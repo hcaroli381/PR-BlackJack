@@ -133,8 +133,13 @@ public class Partida {
 
 	@Override
 	public String toString() {
-		return String.format("Ronda %d\n%s : %s %d puntos\n%s : %s %d puntos", ronda + 1, jugador1.getNombre(),
-				jugador1.getMano().toString(), jugador1.puntuacion(), jugador2.getNombre(),
-				jugador2.getMano().toString(), jugador2.puntuacion());
+		if (!(jugador2 instanceof Crupier)) {
+			return String.format("Ronda %d\n%s : %s %d puntos\n%s : %s %d puntos", ronda + 1, jugador1.getNombre(),
+					jugador1.getMano().toString(), jugador1.puntuacion(), jugador2.getNombre(),
+					jugador2.getMano().toString(), jugador2.puntuacion());
+		} else {
+			return String.format("Ronda %d\n%s\n%s", ronda + 1, jugador1.toString(), ((Crupier) jugador2).toString());
+		}
+
 	}
 }

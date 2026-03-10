@@ -5,10 +5,10 @@ import blackjack.dominio.Partida;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		Consola consola = new Consola();
 		Partida partida;
-		String nombre1, nombre2 = "Crupier";
+		String nombre1, nombre2;
 		boolean pedir1 = true, pedir2 = true;
 		boolean elegirModo;
 
@@ -44,7 +44,7 @@ public class Main {
 			// partida contra el crupier
 			pedir2 = false;
 			nombre1 = consola.leerTextoNoVacio("Introduce el nombre del primer jugador : ");
-
+			nombre2 = "Crupier";
 			partida = new Partida(nombre1, false);
 			partida.iniciarPartida();
 			consola.escribirLinea(partida.toString());
@@ -58,14 +58,20 @@ public class Main {
 
 				if ((partida.getJugador1().puntuacion() > partida.getJugador2().puntuacion())) {
 					pedir2 = true;
+					((Crupier) partida.getJugador2()).setTurno(true);
 				}
 				if ((partida.getJugador1().puntuacion() < partida.getJugador2().puntuacion())
 						|| (partida.getJugador1().puntuacion() == partida.getJugador2().puntuacion())) {
 					pedir2 = false;
 				}
+				if ((partida.getJugador1().puntuacion() < partida.getJugador2().puntuacion()) && pedir1 == false) {
+					((Crupier) partida.getJugador2()).setTurno(true);
+				}
 
 				partida.pedirCarta(pedir1, pedir2);
 				consola.escribirLinea(partida.toString());
+				// retraso para poder ver que hace el crupier
+				Thread.sleep(2000);
 
 			}
 		}
