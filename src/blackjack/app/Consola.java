@@ -159,4 +159,8 @@ public class Consola {
 		} while (c != affirmativeValue && c != negativeValue);
 		return (c == affirmativeValue);
 	}
+
+	public void limpiar() {
+		sc.nextLine();
+	}
 }

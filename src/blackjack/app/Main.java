@@ -13,6 +13,7 @@ public class Main {
 		boolean elegirModo;
 
 		elegirModo = consola.readBooleanUsingChar('p', 'f', "p para jugar PVP f para jugar vs IA : ");
+		consola.limpiar();
 		if (elegirModo) {
 			// partida con 2 jugadores reales
 
@@ -43,6 +44,7 @@ public class Main {
 			// partida contra el crupier
 			pedir2 = false;
 			nombre1 = consola.leerTextoNoVacio("Introduce el nombre del primer jugador : ");
+
 			partida = new Partida(nombre1, false);
 			partida.iniciarPartida();
 			consola.escribirLinea(partida.toString());
