@@ -5,8 +5,10 @@ public class Partida {
 	private Jugador jugador1;
 	private Jugador jugador2;
 	private int ronda;
+
 	/**
 	 * Constructor que crea la baraja, la mezcla y crea a ambos jugadores
+	 * 
 	 * @param nombre1 nombre del primer jugador
 	 * @param nombre2 nombre del segundo jugador
 	 */
@@ -31,6 +33,7 @@ public class Partida {
 
 	/**
 	 * crea una carta para darla a un jugador y eliminarla después
+	 * 
 	 * @param jugador que recibirá la carta
 	 */
 	private void repartirCarta(Jugador jugador) {
@@ -41,6 +44,7 @@ public class Partida {
 
 	/**
 	 * Reparte carta si el jugador la pide
+	 * 
 	 * @param bJug1 comprueba que el jugador 1 quiera carta
 	 * @param bJug2 comprueba que el jugador 2 quiera carta
 	 */
@@ -56,6 +60,7 @@ public class Partida {
 
 	/**
 	 * Dictamina si la partida ha terminado o sigue
+	 * 
 	 * @param bJug1 comprueba que el jugador 1 siga jugando
 	 * @param bJug2 comprueba que el jugador 2 siga jugando
 	 * @return true si la partida finaliza, false si se sigue jugando
@@ -104,7 +109,7 @@ public class Partida {
 
 	@Override
 	public String toString() {
-		return String.format("Ronda %d\n%s : %s %d puntos\n%s : %s %d puntos", ronda, jugador1.getNombre(),
+		return String.format("Ronda %d\n%s : %s %d puntos\n%s : %s %d puntos", ronda + 1, jugador1.getNombre(),
 				jugador1.getMano().toString(), jugador1.puntuacion(), jugador2.getNombre(),
 				jugador2.getMano().toString(), jugador2.puntuacion());
 	}

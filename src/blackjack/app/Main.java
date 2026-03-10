@@ -17,12 +17,14 @@ public class Main {
 		consola.escribirLinea(partida.toString());
 		while (!partida.finPartida(pedir1, pedir2)) {
 			if (pedir1 == true && partida.getJugador1().puntuacion() != 21) {
-				pedir1 = consola.readBooleanUsingChar('p', 'f', "Jugador 1 escribe p para pedir o f para plantarte");
+				pedir1 = consola.readBooleanUsingChar('p', 'f',
+						nombre1 + " escribe p para pedir o f para plantarte : ");
 			} else {
 				pedir1 = false;
 			}
 			if (pedir2 == true && partida.getJugador2().puntuacion() != 21) {
-				pedir2 = consola.readBooleanUsingChar('p', 'f', "Jugador 2 escribe p para pedir o f para plantarte");
+				pedir2 = consola.readBooleanUsingChar('p', 'f',
+						nombre2 + " escribe p para pedir o f para plantarte : ");
 			} else {
 				pedir2 = false;
 			}
