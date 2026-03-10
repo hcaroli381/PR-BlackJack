@@ -13,12 +13,23 @@ public class Partida {
 	 * @param nombre2 nombre del segundo jugador
 	 */
 	public Partida(String nombre1, String nombre2) {
-		baraja = new Baraja();
-		baraja.crearBaraja();
-		baraja.barajar();
+		inicializarMazo();
 
 		jugador1 = new Jugador(nombre1);
 		jugador2 = new Jugador(nombre2);
+	}
+
+	/**
+	 * Constructor que crea la baraja, la mezcla y crea a un solo jugador junto al
+	 * crupier
+	 * 
+	 * @param nombre1 nombre del primer jugador
+	 * @param nombre2 nombre del segundo jugador
+	 */
+	public Partida(String nombre1, boolean esCrupier) {
+		inicializarMazo();
+		jugador1 = new Jugador(nombre1);
+		jugador2 = new Crupier("Crupier", false);
 	}
 
 	/**
@@ -52,8 +63,11 @@ public class Partida {
 		if (bJug1) {
 			repartirCarta(jugador1);
 		}
-		if (bJug2) {
+		if (bJug2 && !(jugador2 instanceof Crupier)) {
 			repartirCarta(jugador2);
+		} else if (!bJug1 && jugador2 instanceof Crupier && bJug2) {
+			repartirCarta(jugador2);
+
 		}
 		ronda = ronda + 1;
 	}
@@ -73,6 +87,12 @@ public class Partida {
 		} else {
 			return false;
 		}
+	}
+
+	private void inicializarMazo() {
+		baraja = new Baraja();
+		baraja.crearBaraja();
+		baraja.barajar();
 	}
 
 	public Baraja getBaraja() {

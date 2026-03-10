@@ -16,6 +16,14 @@ public class Crupier extends Jugador {
 		this.turno = turno;
 	}
 
+	public boolean quiereCarta() {
+		if (turno == true && puntuacion() < 17) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	@Override
 	public String toString() {
 		if (turno = false) {
