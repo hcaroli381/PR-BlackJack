@@ -84,6 +84,10 @@ public class Partida {
 			return true;
 		} else if (jugador1.puntuacion() > 21 || jugador2.puntuacion() > 21) {
 			return true;
+		} else if (!bJug1 && jugador2.puntuacion() == 21) {
+			return true;
+		} else if (!bJug2 && jugador1.puntuacion() == 21) {
+			return true;
 		} else {
 			return false;
 		}
