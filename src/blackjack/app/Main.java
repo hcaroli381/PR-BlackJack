@@ -64,7 +64,7 @@ public class Main {
 						|| (partida.getJugador1().puntuacion() == partida.getJugador2().puntuacion())) {
 					pedir2 = false;
 				}
-				if ((partida.getJugador1().puntuacion() < partida.getJugador2().puntuacion()) && pedir1 == false) {
+				if (((partida.getJugador1().puntuacion() < partida.getJugador2().puntuacion()) && pedir1 == false)) {
 					((Crupier) partida.getJugador2()).setTurno(true);
 				}
 
