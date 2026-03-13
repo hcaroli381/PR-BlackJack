@@ -126,7 +126,7 @@ public class Consola {
 
 		do {
 			try {
-				s = sc.next();
+				s = sc.nextLine().trim();
 
 				if (s.length() != 1) {
 					System.err.println("Error: Debes introducir exactamente un carácter.");

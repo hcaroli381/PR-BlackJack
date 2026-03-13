@@ -13,7 +13,7 @@ public class Main {
 		boolean elegirModo;
 
 		elegirModo = consola.readBooleanUsingChar('p', 'f', "p para jugar PVP f para jugar vs IA : ");
-		consola.limpiar();
+
 		if (elegirModo) {
 			// partida con 2 jugadores reales
 
@@ -47,27 +47,30 @@ public class Main {
 			nombre2 = "Crupier";
 			partida = new Partida(nombre1, false);
 			partida.iniciarPartida();
+
 			consola.escribirLinea(partida.toString());
 			while (!partida.finPartida(pedir1, pedir2)) {
 				if (pedir1 == true && partida.getJugador1().puntuacion() != 21) {
 					pedir1 = consola.readBooleanUsingChar('p', 'f',
 							nombre1 + " escribe p para pedir o f para plantarte : ");
+
 				} else {
 					pedir1 = false;
 				}
-
-				if ((partida.getJugador1().puntuacion() > partida.getJugador2().puntuacion())) {
-					pedir2 = true;
-					((Crupier) partida.getJugador2()).setTurno(true);
+				if (!pedir1) {
+					if ((partida.getJugador1().puntuacion() > partida.getJugador2().puntuacion())) {
+						pedir2 = true;
+						((Crupier) partida.getJugador2()).setTurno(true);
+					}
+					if ((partida.getJugador1().puntuacion() < partida.getJugador2().puntuacion())
+							|| (partida.getJugador1().puntuacion() == partida.getJugador2().puntuacion())) {
+						pedir2 = false;
+					}
+					if (((partida.getJugador1().puntuacion() < partida.getJugador2().puntuacion())
+							&& pedir1 == false)) {
+						((Crupier) partida.getJugador2()).setTurno(true);
+					}
 				}
-				if ((partida.getJugador1().puntuacion() < partida.getJugador2().puntuacion())
-						|| (partida.getJugador1().puntuacion() == partida.getJugador2().puntuacion())) {
-					pedir2 = false;
-				}
-				if (((partida.getJugador1().puntuacion() < partida.getJugador2().puntuacion()) && pedir1 == false)) {
-					((Crupier) partida.getJugador2()).setTurno(true);
-				}
-
 				partida.pedirCarta(pedir1, pedir2);
 				consola.escribirLinea(partida.toString());
 				// retraso para poder ver que hace el crupier

@@ -29,7 +29,7 @@ public class Partida {
 	public Partida(String nombre1, boolean esCrupier) {
 		inicializarMazo();
 		jugador1 = new Jugador(nombre1);
-		jugador2 = new Crupier("Crupier", false);
+		jugador2 = new Crupier("Crupier");
 	}
 
 	/**
@@ -84,9 +84,9 @@ public class Partida {
 			return true;
 		} else if (jugador1.puntuacion() > 21 || jugador2.puntuacion() > 21) {
 			return true;
-		} else if (!bJug1 && jugador2.puntuacion() == 21) {
+		} else if (!(jugador2 instanceof Crupier) && !bJug2 && jugador1.puntuacion() == 21) {
 			return true;
-		} else if (!bJug2 && jugador1.puntuacion() == 21) {
+		} else if (!(jugador2 instanceof Crupier) && !bJug1 && jugador2.puntuacion() == 21) {
 			return true;
 		} else {
 			return false;
