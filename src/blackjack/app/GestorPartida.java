@@ -189,10 +189,6 @@ public class GestorPartida {
 		return pedir2;
 	}
 
-	private boolean volverAJugar() {
-		return consola.readBooleanUsingChar('s', 'n', "¿Quieres volver a jugar? (s/n): ");
-	}
-
 	private void elegirModo() {
 		int opcion = solicitarOpcion(1, 3, "\n1 - Cambiar de modo\n2 - Mismo modo\n3 - Salir");
 

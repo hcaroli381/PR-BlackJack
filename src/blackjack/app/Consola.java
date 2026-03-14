@@ -120,6 +120,11 @@ public class Consola {
 		return valor;
 	}
 
+	/***
+	 * Lee un caracter
+	 * 
+	 * @return
+	 */
 	public char readChar() {
 		String s;
 		boolean hayError = true;
@@ -147,6 +152,14 @@ public class Consola {
 		return c;
 	}
 
+	/***
+	 * Lee dos caracteres
+	 * 
+	 * @param affirmativeValue caracter true
+	 * @param negativeValue    caracter false
+	 * @param mensaje          mensaje a mostrar
+	 * @return depende de la opcion escogida true/false
+	 */
 	public boolean readBooleanUsingChar(char affirmativeValue, char negativeValue, String mensaje) {
 		char c;
 		escribir(mensaje);
@@ -165,6 +178,14 @@ public class Consola {
 
 	}
 
+	/***
+	 * Lee un rango de enteros
+	 * 
+	 * @param lowerBound minimo
+	 * @param upperBound max
+	 * @param mensaje    mensaje a mostrar
+	 * @return entero escogido
+	 */
 	public int readIntInRange(int lowerBound, int upperBound, String mensaje) {
 		int valor;
 		escribir(mensaje);
