@@ -26,7 +26,7 @@ public class Partida {
 	 * @param nombre1 nombre del primer jugador
 	 * @param nombre2 nombre del segundo jugador
 	 */
-	public Partida(String nombre1, boolean esCrupier) {
+	public Partida(String nombre1) {
 		inicializarMazo();
 		jugador1 = new Jugador(nombre1);
 		jugador2 = new Crupier("Crupier");

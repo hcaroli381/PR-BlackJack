@@ -49,7 +49,7 @@ public class Main {
 					pedir2 = false;
 					nombre1 = consola.leerTextoNoVacio("Introduce el nombre del primer jugador : ");
 					nombre2 = "Crupier";
-					partida = new Partida(nombre1, false);
+					partida = new Partida(nombre1);
 					partida.iniciarPartida();
 
 					consola.escribirLinea(partida.toString());
