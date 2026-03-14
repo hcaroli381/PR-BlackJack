@@ -43,13 +43,18 @@ public class GestorPartida {
 
 	private void configurarPartida() {
 		if (modoConfigurado) {
+
 			this.partida = crearPartida();
 		}
 		if (!modoConfigurado) {
 			modoPvp = solicitarModo();
 			modoConfigurado = true;
-			if (nombresConfigurados) {
+			if (nombresConfigurados && !(this.partida.getJugador2() instanceof Crupier)) {
 				this.partida = crearPartida();
+			} else {
+				this.partida = crearPartida();
+				solicitarNombres(partida);
+				nombresConfigurados = true;
 			}
 		}
 
