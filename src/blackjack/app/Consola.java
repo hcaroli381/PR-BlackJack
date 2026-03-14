@@ -163,4 +163,17 @@ public class Consola {
 	public void limpiar() {
 		sc.nextLine();
 	}
+
+	public int readIntInRange(int lowerBound, int upperBound) {
+		int valor;
+		escribir(String.format("Introduce un entero entre %d y %d: ", lowerBound, upperBound));
+		do {
+			valor = leerEntero("");
+			if (valor < lowerBound || valor > upperBound) {
+				System.err.printf("Error: %d no está entre %d y %d. Inténtalo de nuevo: ", valor, lowerBound,
+						upperBound);
+			}
+		} while (valor < lowerBound || valor > upperBound);
+		return valor;
+	}
 }
