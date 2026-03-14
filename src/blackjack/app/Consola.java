@@ -174,28 +174,4 @@ public class Consola {
 		return (c == affirmativeValue);
 	}
 
-	public void limpiar() {
-
-	}
-
-	/***
-	 * Lee un rango de enteros
-	 * 
-	 * @param lowerBound minimo
-	 * @param upperBound max
-	 * @param mensaje    mensaje a mostrar
-	 * @return entero escogido
-	 */
-	public int readIntInRange(int lowerBound, int upperBound, String mensaje) {
-		int valor;
-		escribir(mensaje);
-		do {
-			valor = leerEntero("");
-			if (valor < lowerBound || valor > upperBound) {
-				System.err.printf("Error: %d no está entre %d y %d. Inténtalo de nuevo: ", valor, lowerBound,
-						upperBound);
-			}
-		} while (valor < lowerBound || valor > upperBound);
-		return valor;
-	}
 }

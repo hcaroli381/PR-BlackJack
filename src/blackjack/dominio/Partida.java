@@ -29,7 +29,7 @@ public class Partida {
 	public Partida(String nombre1) {
 		inicializarMazo();
 		jugador1 = new Jugador(nombre1);
-		jugador2 = new Crupier("Crupier");
+		jugador2 = new Crupier();
 	}
 
 	/**

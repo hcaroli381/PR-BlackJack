@@ -64,8 +64,8 @@ public class GestorPartida {
 		return consola.readBooleanUsingChar('p', 'f', "\n'p' para jugar PVP, 'f' para jugar vs IA: ");
 	}
 
-	private int solicitarOpcion(int a, int b, String mensaje) {
-		return consola.readIntInRange(a, b, mensaje);
+	private int solicitarOpcion(int min, int max, String mensaje) {
+		return consola.leerEnteroRango(mensaje, min, max);
 	}
 
 	private void solicitarNombres(Partida partida) {

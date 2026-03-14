@@ -3,7 +3,7 @@ package blackjack.dominio;
 public class Crupier extends Jugador {
 	private boolean turno;
 
-	public Crupier(String nombre) {
+	public Crupier() {
 		super("Crupier");
 		this.turno = false;
 	}
