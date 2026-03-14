@@ -2,11 +2,11 @@
 
 Mi juego es simple, nos empezará preguntando si queremos jugar contra otro jugador o VS la IA
 
-**img1
+![inicio](./assets/imgs/Captura%20de%20pantalla%202026-03-14%20123245.png)
 
 Luego nos dará a elegir 1 o 2 nombres según el modo de juego elegido
 
-**img
+![inicio](./assets/imgs/Captura%20de%20pantalla%202026-03-14%20123333.png)
 
 ## Reglas
 
@@ -40,7 +40,8 @@ Estas normas se aplican siempre, independientemente del modo elegido.
 
     Ganador: Solo se comparan las manos cuando ambos han confirmado que no quieren más cartas o uno de ellos ha superado los 21.
 
-**img2
+![inicio](./assets/imgs/Captura%20de%20pantalla%202026-03-14%20123414.png)
+![inicio](./assets/imgs/Captura%20de%20pantalla%202026-03-14%20123426.png)
 
 >>Debemos pedir la opción a ambos a la vez para que ninguno tenga ventaja
 
@@ -56,7 +57,12 @@ Estas normas se aplican siempre, independientemente del modo elegido.
         La IA se planta si está empatada o ya tiene más puntuación que el jugador.
 
     Ventaja del Crupier: Si el jugador se pasa de 21, pierde inmediatamente antes de que el Crupier revele su juego.
-**img
+![inicio](./assets/imgs/Captura%20de%20pantalla%202026-03-14%20123608.png)
+
+
+## Extra
+Al acabar la partida se nos mostrara cual era la siguiente carta que tocaba, para saber que hubiera pasado si no nos hubiésemos plantado, por ejemplo.
+![inicio](./assets/imgs/Captura%20de%20pantalla%202026-03-14%20123618.png)
 
 ## Al terminar
 Tenemos 3 opciones :
@@ -64,7 +70,7 @@ Tenemos 3 opciones :
 2.  Jugar al mismo modo de juego 
 3.  Salir
 
-**img
+![inicio](./assets/imgs/Captura%20de%20pantalla%202026-03-14%20124221.png)
 
 ### Opción 1 
 Volvemos al principio del juego.

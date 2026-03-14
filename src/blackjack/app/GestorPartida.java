@@ -5,7 +5,7 @@ import blackjack.dominio.Partida;
 
 public class GestorPartida {
 	private Consola consola;
-	Partida partida;
+	private Partida partida;
 	private boolean modoConfigurado;
 	private boolean modoPvp;
 	private boolean nombresConfigurados;
