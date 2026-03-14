@@ -84,16 +84,17 @@ public class Consola {
 	 * @return Número entero introducido por el usuario.
 	 */
 	public int leerEntero(String mensaje) {
-
 		int resultado = 0;
 		boolean hayError = true;
+		if (mensaje != null && !mensaje.isEmpty()) {
+			escribir(mensaje);
+		}
 		do {
 			try {
-				resultado = sc.nextInt();
+				resultado = Integer.parseInt(sc.nextLine().trim());
 				hayError = false;
 			} catch (Exception e) {
-				escribir("Error: Introduce un número entero válido.");
-				sc.nextLine();
+				escribirLinea("Error: Introduce un número entero válido.");
 			}
 		} while (hayError);
 		return resultado;
@@ -148,7 +149,7 @@ public class Consola {
 
 	public boolean readBooleanUsingChar(char affirmativeValue, char negativeValue, String mensaje) {
 		char c;
-		System.out.printf("%s", mensaje, affirmativeValue, negativeValue);
+		escribir(mensaje);
 
 		do {
 			c = readChar();
@@ -161,12 +162,12 @@ public class Consola {
 	}
 
 	public void limpiar() {
-		sc.nextLine();
+
 	}
 
-	public int readIntInRange(int lowerBound, int upperBound) {
+	public int readIntInRange(int lowerBound, int upperBound, String mensaje) {
 		int valor;
-		escribir(String.format("Introduce un entero entre %d y %d: ", lowerBound, upperBound));
+		escribir(mensaje);
 		do {
 			valor = leerEntero("");
 			if (valor < lowerBound || valor > upperBound) {
